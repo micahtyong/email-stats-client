@@ -1,11 +1,3 @@
 {
-    "extends": [
-      "plugin:prettier/recommended",
-    ],
-  
-    "plugins": ["prettier", "vetur"],
-  
-    "rules": {
-      "prettier/prettier": "error"
-    }
-  }
+  "extends": ["plugin:vue/base"]
+}

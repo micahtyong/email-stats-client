@@ -6,15 +6,15 @@
     <EmailGraph />
     <EmailGraph />
     <EmailGraph />
-  </div> 
+  </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import EmailGraph from "./components/EmailGraph.vue"
+import Header from './components/Header.vue'
+import EmailGraph from './components/EmailGraph.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Header,
     EmailGraph
@@ -24,7 +24,7 @@ export default {
       headerText: 'Welcome to Gmail Stats'
     }
   }
-};
+}
 </script>
 
 <style scoped>
