@@ -1,12 +1,12 @@
 <template>
   <div>
     Hi there
-    <line-chart v-if="loaded" :chartdata="chartdata" />
+    <LineChart />
   </div>
 </template>
 
 <script>
-import LineChart from './LineChart.js'
+import LineChart from './LineChart.vue'
 
 export default {
   components: {
@@ -35,7 +35,6 @@ export default {
     } catch (e) {
       console.error(e)
     }
-    console.log('mounted!')
   }
 }
 </script>
