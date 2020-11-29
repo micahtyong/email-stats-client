@@ -1,27 +1,41 @@
 <template>
   <img alt="Gmail logo" src="./assets/gmail.png" width="100" />
-  <Header v-bind:msg="headerText" />
+  <Header :msg="headerText" />
   <div class="graphs">
-    <EmailGraph />
-    <EmailGraph />
-    <EmailGraph />
-    <EmailGraph />
+    <LineChart
+      title="From Me to Gmail"
+      :times="times"
+      :fromMeToGmail="fromMeToGmail"
+    />
   </div>
 </template>
 
 <script>
+import { ref } from 'vue'
 import Header from './components/Header.vue'
-import EmailGraph from './components/EmailGraph.vue'
+import LineChart from './components/LineChart.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    EmailGraph
+    LineChart
   },
-  data() {
+  setup() {
+    const headerText = ref('Welcome to Gmail Stats')
+    const start = Math.floor(
+      new Date(new Date().getTime() - 60 * 60 * 24 * 7 * 1000).getTime() / 1000
+    )
+    const end = Math.floor(Date.now() / 1000)
+    const times = [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+    const fromMeToGmail = [30, 40, 45, 50, 49, 60, 70, 91]
+
     return {
-      headerText: 'Welcome to Gmail Stats'
+      headerText,
+      start,
+      end,
+      times,
+      fromMeToGmail
     }
   }
 }

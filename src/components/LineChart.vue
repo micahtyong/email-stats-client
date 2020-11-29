@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h3>
+      {{ title }}
+    </h3>
     <apexcharts
       width="500"
       height="350"
@@ -18,6 +21,11 @@ export default {
   components: {
     apexcharts: VueApexCharts
   },
+  props: {
+    title: String,
+    times: Array,
+    fromMeToGmail: Array
+  },
   data: function () {
     return {
       chartOptions: {
@@ -25,16 +33,17 @@ export default {
           id: 'basic-line'
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+          categories: this.times
         }
       },
       series: [
         {
-          name: 'series-1',
-          data: [30, 40, 45, 50, 49, 60, 70, 91]
+          name: this.title,
+          data: this.fromMeToGmail
         }
       ]
     }
-  }
+  },
+  methods: {}
 }
 </script>
