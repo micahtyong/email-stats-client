@@ -14,6 +14,7 @@
 import { ref } from 'vue'
 import Header from './components/Header.vue'
 import LineChart from './components/LineChart.vue'
+import { rangeScan } from './fetchStats.js'
 
 export default {
   name: 'App',
@@ -21,8 +22,8 @@ export default {
     Header,
     LineChart
   },
-  setup() {
-    const headerText = ref('Welcome to Gmail Stats')
+  data() {
+    const headerText = 'Welcome to Gmail Stats'
     const start = Math.floor(
       new Date(new Date().getTime() - 60 * 60 * 24 * 7 * 1000).getTime() / 1000
     )
@@ -37,6 +38,11 @@ export default {
       times,
       fromMeToGmail
     }
+  },
+  created() {
+    rangeScan('micahtyong@gmail.com', this.start, this.end)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
   }
 }
 </script>

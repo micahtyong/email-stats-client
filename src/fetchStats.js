@@ -1,12 +1,10 @@
 const AWS = require('aws-sdk')
-const dotenv = require('dotenv')
-dotenv.config()
 
 const awsConfig = {
   region: 'us-east-1',
   endpoint: 'http://dynamodb.us-east-1.amazonaws.com',
-  accessKeyId: process.env.AWS_DB_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_DB_SECRET_KEY
+  accessKeyId: process.env.VUE_APP_AWS_DB_ACCESS_KEY,
+  secretAccessKey: process.env.VUE_APP_AWS_DB_SECRET_KEY
 }
 AWS.config.update(awsConfig)
 
@@ -15,7 +13,7 @@ const docClient = new AWS.DynamoDB.DocumentClient()
  * Fetches gmail data according to some range
  * Formats for frontend client.
  */
-const rangeScan = function (email, start, end) {
+export const rangeScan = function (email, start, end) {
   const params = {
     TableName: 'gmail-stats',
     KeyConditionExpression: 'id = :id AND #t between :start AND :end',
@@ -46,8 +44,7 @@ const rangeScan = function (email, start, end) {
       const fromMeToNonGmail = []
 
       // Step 1: Extract
-      let items = data.Items
-      for (gmailItem of items) {
+      for (const gmailItem of data.Items) {
         times.push(gmailItem.time)
         toMeFromGmail.push(gmailItem.toMeFromGmail)
         toMeFromNonGmail.push(gmailItem.toMeFromNonGmail)
@@ -67,5 +64,3 @@ const rangeScan = function (email, start, end) {
     })
   })
 }
-
-exports.rangeScan = rangeScan

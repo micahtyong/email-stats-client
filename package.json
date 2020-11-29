@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "apexcharts": "^3.22.2",
+    "aws-sdk": "^2.799.0",
     "core-js": "^3.6.5",
     "date-fns": "^2.16.1",
+    "dotenv": "^8.2.0",
     "vue": "^3.0.0",
     "vue-apexcharts": "^1.6.0",
+    "vue-hooks": "^0.3.2",
     "vue3-apexcharts": "^1.1.1"
   },
   "devDependencies": {
