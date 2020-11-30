@@ -43,7 +43,13 @@ export default {
         }
       ]
     }
-  },
-  methods: {}
+  }
 }
 </script>
+
+<style scoped>
+.graph {
+  flex: 1 0 41%;
+  margin: 10px;
+}
+</style>

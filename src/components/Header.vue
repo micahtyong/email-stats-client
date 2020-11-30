@@ -1,16 +1,19 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p>
+      Showing emails stats for <b>micahtyong@gmail.com</b> from the past week.
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   props: {
-    msg: String,
-  },
-};
+    msg: String
+  }
+}
 </script>
 
 <style scoped>
