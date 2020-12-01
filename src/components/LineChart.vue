@@ -12,6 +12,7 @@
 
 <script>
 import VueApexCharts from 'vue3-apexcharts'
+import { timeConverter } from '../fetchStats'
 
 export default {
   name: 'LineChart',
@@ -34,13 +35,16 @@ export default {
         xaxis: {
           categories: this.times,
           labels: {
-            rotate: -90,
+            formatter: (value) => {
+              return timeConverter(value)
+            },
             hideOverlappingLabels: true
           },
           title: {
             text: 'Time',
             offsetX: 0,
-            offsetY: 10,
+            offsetY: 8,
+            tickPlacement: 'on',
             style: {
               color: undefined,
               fontSize: '12px',

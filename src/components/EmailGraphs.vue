@@ -8,9 +8,8 @@
         :title="fmtgLabel"
         :times="times"
         :fromMeToGmail="fromMeToGmail"
-        width="500"
-        height="350"
-        route="/graphs/frommetogmail"
+        :width="width"
+        :height="height"
       />
     </div>
     <div>
@@ -21,8 +20,8 @@
         :title="fmtngLabel"
         :times="times"
         :fromMeToGmail="fromMeToNonGmail"
-        width="500"
-        height="350"
+        :width="width"
+        :height="height"
       />
     </div>
     <div>
@@ -32,8 +31,8 @@
         :title="tmfgLabel"
         :times="times"
         :fromMeToGmail="toMeFromGmail"
-        width="500"
-        height="350"
+        :width="width"
+        :height="height"
       />
     </div>
     <div>
@@ -44,8 +43,8 @@
         :title="tmfngLabel"
         :times="times"
         :fromMeToGmail="toMeFromNonGmail"
-        width="500"
-        height="350"
+        :width="width"
+        :height="height"
       />
     </div>
   </div>
@@ -55,7 +54,7 @@
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 import LineChart from './LineChart.vue'
-import { rangeScan, timeConverter } from '../fetchStats.js'
+import { rangeScan } from '../fetchStats.js'
 
 export default {
   name: 'EmailGraphs',
@@ -71,44 +70,35 @@ export default {
     const end = Math.floor(Date.now() / 1000)
     const gmailStats = await rangeScan('micahtyong@gmail.com', start, end)
 
-    // Parse
-    for (var i = 0; i < gmailStats.times.length; i++) {
-      gmailStats.times[i] = timeConverter(gmailStats.times[i])
-    }
-    const times = ref(gmailStats.times)
-    const fromMeToGmail = ref(gmailStats.fromMeToGmail)
-    const fromMeToNonGmail = ref(gmailStats.fromMeToNonGmail)
-    const toMeFromGmail = ref(gmailStats.toMeFromGmail)
-    const toMeFromNonGmail = ref(gmailStats.toMeFromNonGmail)
-
-    // Return
-    store.commit('setStats', {
+    // Parse and commit full stats
+    const fullStats = {
       times: gmailStats.times,
       fromMeToGmail: gmailStats.fromMeToGmail,
       fromMeToNonGmail: gmailStats.fromMeToNonGmail,
       toMeFromGmail: gmailStats.toMeFromGmail,
       toMeFromNonGmail: gmailStats.toMeFromNonGmail
-    })
+    }
+    store.commit('setStats', fullStats)
+
+    // Return
     return {
-      times,
-      fromMeToGmail,
-      fromMeToNonGmail,
-      toMeFromGmail,
-      toMeFromNonGmail,
+      times: ref(gmailStats.times),
+      fromMeToGmail: ref(gmailStats.fromMeToGmail),
+      fromMeToNonGmail: ref(gmailStats.fromMeToNonGmail),
+      toMeFromGmail: ref(gmailStats.toMeFromGmail),
+      toMeFromNonGmail: ref(gmailStats.toMeFromNonGmail),
       fmtgLabel: 'From Me to Gmail',
       fmtngLabel: 'From Me to Non-Gmail',
       tmfgLabel: 'To Me from Gmail',
-      tmfngLabel: 'To Me from Non-Gmail'
+      tmfngLabel: 'To Me from Non-Gmail',
+      width: '480',
+      height: '350'
     }
   }
 }
 </script>
 
 <style scoped>
-.small {
-  max-width: 600px;
-  margin: 150px auto;
-}
 .graphs {
   display: flex;
   flex-direction: row;

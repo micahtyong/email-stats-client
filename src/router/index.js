@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
-import FromMeToGmail from '../views/FromMeToGmail.vue'
-import FromMeToNonGmail from '../views/FromMeToNonGmail.vue'
-import ToMeFromGmail from '../views/ToMeFromGmail.vue'
-import ToMeFromNonGmail from '../views/ToMeFromNonGmail.vue'
+import FromMeToGmail from '../views/graphs/FromMeToGmail.vue'
+import FromMeToNonGmail from '../views/graphs/FromMeToNonGmail.vue'
+import ToMeFromGmail from '../views/graphs/ToMeFromGmail.vue'
+import ToMeFromNonGmail from '../views/graphs/ToMeFromNonGmail.vue'
 
 const routes = [
   {
@@ -13,8 +13,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/docs',
+    name: 'Docs',
     component: About
     // () => import('../views/About.vue') for lazy loading
   },

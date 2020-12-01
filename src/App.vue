@@ -1,19 +1,22 @@
 <template>
   <div id="nav">
     <router-link class="router-link" to="/">Home</router-link> |
-    <router-link class="router-link" to="/about">About</router-link>
+    <router-link class="router-link" to="/docs">Docs</router-link>
   </div>
   <router-view />
 </template>
 
 <style>
+/* Global CSS */
 #app {
   font-family: Helvetica-Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #333333;
-  margin-top: 60px;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
   line-height: 1.4;
 }
 
@@ -21,8 +24,20 @@ body {
   margin: 10px;
 }
 
+p {
+  width: 60%;
+  text-align: left;
+  margin-top: 0;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar CSS */
 #nav {
-  padding: 0px 5px 0px 0px;
   display: flex;
   justify-content: flex-end;
 }
@@ -40,6 +55,7 @@ body {
   color: #ea4335;
 }
 
+/* Graph CSS */
 .graph-enlarged {
   display: flex;
   flex-direction: column;

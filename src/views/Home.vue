@@ -3,7 +3,7 @@
     <template #default>
       <div>
         <img alt="Gmail logo" src="../assets/gmail.png" width="100" />
-        <Header :msg="headerText" />
+        <Header :title="headerText" :msg="descriptionText" />
         <EmailGraphs />
       </div>
     </template>
@@ -25,7 +25,9 @@ export default {
   },
   setup() {
     return {
-      headerText: 'Welcome to Gmail Stats'
+      headerText: 'Gmail Stats',
+      descriptionText:
+        'Showing email stats for micahtyong@gmail.com from the past week. Times are shown in PDT.'
     }
   }
 }
