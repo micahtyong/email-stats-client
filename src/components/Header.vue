@@ -3,6 +3,7 @@
     <h1>{{ msg }}</h1>
     <p>
       Showing emails stats for <b>micahtyong@gmail.com</b> from the past week.
+      Times are shown in PDT.
     </p>
   </div>
 </template>
@@ -18,7 +19,7 @@ export default {
 
 <style scoped>
 h3 {
-  margin: 40px 0 0;
+  margin: 30px 0 0;
 }
 ul {
   list-style-type: none;

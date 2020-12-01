@@ -26,7 +26,7 @@
 <script>
 import { ref } from 'vue'
 import LineChart from './LineChart.vue'
-import { rangeScan } from '../fetchStats.js'
+import { rangeScan, timeConverter } from '../fetchStats.js'
 
 export default {
   name: 'EmailGraphs',
@@ -42,6 +42,9 @@ export default {
     const gmailStats = await rangeScan('micahtyong@gmail.com', start, end)
 
     // Parse
+    for (var i = 0; i < gmailStats.times.length; i++) {
+      gmailStats.times[i] = timeConverter(gmailStats.times[i])
+    }
     const times = ref(gmailStats.times)
     const fromMeToGmail = ref(gmailStats.fromMeToGmail)
     const fromMeToNonGmail = ref(gmailStats.fromMeToNonGmail)

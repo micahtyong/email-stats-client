@@ -33,7 +33,39 @@ export default {
           id: 'basic-line'
         },
         xaxis: {
-          categories: this.times
+          categories: this.times,
+          labels: {
+            rotate: -90,
+            hideOverlappingLabels: true
+          },
+          title: {
+            text: 'Time',
+            offsetX: 0,
+            offsetY: 10,
+            style: {
+              color: undefined,
+              fontSize: '12px',
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              fontWeight: 600,
+              cssClass: 'apexcharts-xaxis-title'
+            }
+          }
+        },
+        yaxis: {
+          show: true,
+          title: {
+            text: 'Count',
+            rotate: -90,
+            offsetX: 0,
+            offsetY: 0,
+            style: {
+              color: undefined,
+              fontSize: '12px',
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              fontWeight: 600,
+              cssClass: 'apexcharts-yaxis-title'
+            }
+          }
         }
       },
       series: [
