@@ -16,11 +16,14 @@
     "vue": "^3.0.0",
     "vue-apexcharts": "^1.6.0",
     "vue-hooks": "^0.3.2",
-    "vue3-apexcharts": "^1.1.1"
+    "vue-router": "^4.0.0-0",
+    "vue3-apexcharts": "^1.1.1",
+    "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.9",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",

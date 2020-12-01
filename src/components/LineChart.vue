@@ -1,11 +1,8 @@
 <template>
   <div>
-    <h3>
-      {{ title }}
-    </h3>
     <apexcharts
-      width="500"
-      height="350"
+      :width="width"
+      :height="height"
       type="line"
       :options="chartOptions"
       :series="series"
@@ -24,7 +21,9 @@ export default {
   props: {
     title: String,
     times: Array,
-    fromMeToGmail: Array
+    fromMeToGmail: Array,
+    width: String || Number,
+    height: String || Number
   },
   data: function () {
     return {
@@ -79,9 +78,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.graph {
-  flex: 1 0 41%;
-  margin: 10px;
-}
-</style>
+<style scoped></style>

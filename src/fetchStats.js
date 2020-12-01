@@ -88,7 +88,6 @@ export const timeConverter = (UNIX_timestamp) => {
   const month = months[a.getMonth()]
   const date = a.getDate()
   const hour = a.getHours()
-  const min = a.getMinutes()
   const time = date + ' ' + month + ' ' + year + ' ' + hour + ':00'
   return time
 }
