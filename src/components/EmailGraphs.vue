@@ -1,6 +1,6 @@
 <template>
   <div class="graphs">
-    <div>
+    <div class="graph">
       <router-link class="header" to="/graphs/frommetogmail">
         <h3>{{ fmtgLabel }}</h3>
       </router-link>
@@ -12,7 +12,7 @@
         :height="height"
       />
     </div>
-    <div>
+    <div class="graph">
       <router-link class="header" to="/graphs/frommetonongmail">
         <h3>{{ fmtngLabel }}</h3>
       </router-link>
@@ -24,7 +24,7 @@
         :height="height"
       />
     </div>
-    <div>
+    <div class="graph">
       <router-link class="header" to="/graphs/tomefromgmail">
         <h3>{{ tmfgLabel }}</h3> </router-link
       ><LineChart
@@ -35,7 +35,7 @@
         :height="height"
       />
     </div>
-    <div>
+    <div class="graph">
       <router-link class="header" to="/graphs/tomefromnongmail">
         <h3>{{ tmfngLabel }}</h3>
       </router-link>
@@ -91,8 +91,8 @@ export default {
       fmtngLabel: 'From Me to Non-Gmail',
       tmfgLabel: 'To Me from Gmail',
       tmfngLabel: 'To Me from Non-Gmail',
-      width: '480',
-      height: '350'
+      width: '100%',
+      height: 'auto'
     }
   }
 }
@@ -103,7 +103,14 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.graph {
+  display: inline-block;
+  margin: 10px 0 0 2%;
+  flex-grow: 1;
+  /* height: 100px; */
+  width: calc(100% * (1 / 3) - 10px - 1px);
 }
 </style>

@@ -26,7 +26,4 @@ export default {
 a {
   color: #ea4335;
 }
-span {
-  font-size: 12px;
-}
 </style>

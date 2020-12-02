@@ -1,6 +1,7 @@
 <template>
   <div class="text-content">
-    <Header :title="headerText" :msg="descriptionText" />
+    <Header :title="headerText" />
+    <p>{{ descriptionText }}</p>
     <p>
       In the
       <router-link class="header" to="/"><b>homepage</b></router-link
@@ -68,5 +69,6 @@ export default {
 <style scoped>
 ul {
   list-style-position: outside;
+  list-style-type: circle;
 }
 </style>
