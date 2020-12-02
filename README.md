@@ -1,4 +1,4 @@
-# productiv-gmail
+# Email Stats Client
 
 Welcome to Gmail Stats, a single page application that helps Gmail users visually analyze their inbox activity. This is the frontend client for [my Node.js email stats scraper](https://github.com/micahtyong/email-stats). If you're a developer and would like to clone or fork this repo, read below on how to get started.
 
