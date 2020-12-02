@@ -15,6 +15,7 @@
     "dotenv": "^8.2.0",
     "vue": "^3.0.0",
     "vue-apexcharts": "^1.6.0",
+    "vue-cli-plugin-s3-deploy": "^4.0.0-rc4",
     "vue-hooks": "^0.3.2",
     "vue-router": "^4.0.0-0",
     "vue3-apexcharts": "^1.1.1",
