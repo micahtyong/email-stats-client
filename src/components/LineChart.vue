@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <apexcharts
-      :width="width"
-      :height="height"
-      type="line"
-      :options="chartOptions"
-      :series="series"
-    />
-  </div>
+  <apexcharts
+    :width="width"
+    :height="height"
+    type="line"
+    :options="chartOptions"
+    :series="series"
+  />
 </template>
 
 <script>
