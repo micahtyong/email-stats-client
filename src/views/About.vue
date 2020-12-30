@@ -1,5 +1,5 @@
 <template>
-  <div class="text-content">
+  <div class="text-content d-flex">
     <Header :title="headerText" />
     <p>{{ descriptionText }}</p>
     <p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="graphs">
+  <div class="graphs d-flex">
     <div class="graph">
       <router-link class="header" to="/graphs/frommetogmail">
         <h3>{{ fmtgLabel }}</h3>
@@ -100,8 +100,6 @@ export default {
 
 <style scoped>
 .graphs {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -110,7 +108,6 @@ export default {
   display: inline-block;
   margin: 10px 0 0 2%;
   flex-grow: 1;
-  /* height: 100px; */
   width: calc(100% * (1 / 3) - 10px - 1px);
 }
 </style>

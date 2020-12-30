@@ -1,5 +1,5 @@
 <template>
-  <div class="graph-enlarged">
+  <div class="graph-enlarged d-flex">
     <Header :title="headerText" :msg="descriptionText" />
     <LineChart :title="label" :times="times" :fromMeToGmail="stats" />
   </div>
