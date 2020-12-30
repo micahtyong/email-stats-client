@@ -26,9 +26,9 @@ export default {
     width: String || Number,
     height: String || Number
   },
-  data: function () {
-    return {
-      chartOptions: {
+  computed: {
+    chartOptions: function () {
+      return {
         chart: {
           id: 'basic-line'
         },
@@ -70,8 +70,10 @@ export default {
             }
           }
         }
-      },
-      series: [
+      }
+    },
+    series: function () {
+      return [
         {
           name: this.title,
           data: this.fromMeToGmail
