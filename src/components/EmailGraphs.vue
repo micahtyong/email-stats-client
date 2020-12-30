@@ -1,7 +1,7 @@
 <template>
   <div class="graphs d-flex">
     <div class="graph">
-      <router-link class="header" to="/graphs/frommetogmail">
+      <router-link class="header" to="/graphs/from-me-to-gmail">
         <h3>{{ fmtgLabel }}</h3>
       </router-link>
       <LineChart
@@ -13,7 +13,7 @@
       />
     </div>
     <div class="graph">
-      <router-link class="header" to="/graphs/frommetonongmail">
+      <router-link class="header" to="/graphs/from-me-to-non-gmail">
         <h3>{{ fmtngLabel }}</h3>
       </router-link>
       <LineChart
@@ -25,7 +25,7 @@
       />
     </div>
     <div class="graph">
-      <router-link class="header" to="/graphs/tomefromgmail">
+      <router-link class="header" to="/graphs/to-me-from-gmail">
         <h3>{{ tmfgLabel }}</h3> </router-link
       ><LineChart
         :title="tmfgLabel"
@@ -36,7 +36,7 @@
       />
     </div>
     <div class="graph">
-      <router-link class="header" to="/graphs/tomefromnongmail">
+      <router-link class="header" to="/graphs/to-me-from-non-gmail">
         <h3>{{ tmfngLabel }}</h3>
       </router-link>
       <LineChart

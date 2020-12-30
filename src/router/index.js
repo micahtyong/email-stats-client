@@ -19,22 +19,22 @@ const routes = [
     // () => import('../views/About.vue') for lazy loading
   },
   {
-    path: '/graphs/frommetogmail',
+    path: '/graphs/from-me-to-gmail',
     name: 'From Me To Gmail',
     component: FromMeToGmail
   },
   {
-    path: '/graphs/frommetonongmail',
+    path: '/graphs/from-me-to-non-gmail',
     name: 'From Me To Non-Gmail',
     component: FromMeToNonGmail
   },
   {
-    path: '/graphs/tomefromgmail',
+    path: '/graphs/to-me-from-gmail',
     name: 'To Me From Gmail',
     component: ToMeFromGmail
   },
   {
-    path: '/graphs/tomefromnongmail',
+    path: '/graphs/to-me-from-non-gmail',
     name: 'To Me From Non-Gmail',
     component: ToMeFromNonGmail
   }
