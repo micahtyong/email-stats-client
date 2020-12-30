@@ -56,12 +56,9 @@ export default {
     Header,
     Footer
   },
-  setup() {
-    return {
-      headerText: 'What is Gmail Stats?',
-      descriptionText:
-        "Welcome to Gmail Stats, a single page application that helps Gmail users visually analyze their inbox activity. Here's how to get started."
-    }
+  computed: {
+    headerText: function () { return 'What is Gmail Stats?' },
+    descriptionText: function () { return "Welcome to Gmail Stats, a single page application that helps Gmail users visually analyze their inbox activity. Here's how to get started."}
   }
 }
 </script>
