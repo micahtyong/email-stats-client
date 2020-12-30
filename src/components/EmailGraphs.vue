@@ -55,6 +55,8 @@ import { ref } from 'vue'
 import { useStore } from 'vuex'
 import LineChart from './LineChart.vue'
 import { rangeScan } from '../fetchStats.js'
+import moment from 'moment'
+moment().format()
 
 export default {
   name: 'EmailGraphs',
@@ -64,10 +66,8 @@ export default {
   async setup() {
     // Setup and fetch
     const store = useStore()
-    const start = Math.floor(
-      new Date(new Date().getTime() - 60 * 60 * 24 * 7 * 1000).getTime() / 1000
-    )
-    const end = Math.floor(Date.now() / 1000)
+    const start = moment().subtract(1, 'weeks').unix()
+    const end = moment().unix()
     const gmailStats = await rangeScan('micahtyong@gmail.com', start, end)
 
     // Parse and commit full stats
