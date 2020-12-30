@@ -64,30 +64,3 @@ export const rangeScan = (email, start, end) => {
     })
   })
 }
-
-/**
- * Converts UNIX time stamp into human-readable format, dd mm YYYY hh
- */
-export const timeConverter = (UNIX_timestamp) => {
-  const a = new Date(UNIX_timestamp * 1000)
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
-  ]
-  const year = a.getFullYear()
-  const month = months[a.getMonth()]
-  const date = a.getDate()
-  const hour = a.getHours()
-  const time = date + ' ' + month + ' ' + year + ' ' + hour + ':00'
-  return time
-}

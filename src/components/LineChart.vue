@@ -13,6 +13,8 @@
 <script>
 import VueApexCharts from 'vue3-apexcharts'
 import { timeConverter } from '../fetchStats'
+import moment from 'moment'
+moment().format()
 
 export default {
   name: 'LineChart',
@@ -36,7 +38,7 @@ export default {
           categories: this.times,
           labels: {
             formatter: (value) => {
-              return timeConverter(value)
+              return moment.unix(value).format('dd MMM YYYY hh:mm')
             },
             hideOverlappingLabels: true
           },
