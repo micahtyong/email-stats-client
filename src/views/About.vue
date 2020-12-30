@@ -17,7 +17,7 @@
       >
       of the graphs, users can click on the titles of each graph and they will
       be redirected to a view that displays the metrics-over-time graphs in full
-      screen. To navigate back to home or docs, users should interact with the
+      screen. To navigate back to home or about, users should interact with the
       navigation bar on the upper right hand corner or use their browser's
       navigation tools.
     </p>
@@ -51,7 +51,7 @@ import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 
 export default {
-  name: 'Docs',
+  name: 'About',
   components: {
     Header,
     Footer

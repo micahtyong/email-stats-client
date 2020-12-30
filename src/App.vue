@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex" id="nav">
     <router-link class="router-link" to="/">Home</router-link> |
-    <router-link class="router-link" to="/docs">Docs</router-link>
+    <router-link class="router-link" to="/about">About</router-link>
   </div>
   <router-view />
 </template>

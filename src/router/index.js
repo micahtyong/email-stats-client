@@ -13,8 +13,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/docs',
-    name: 'Docs',
+    path: '/about',
+    name: 'About',
     component: About
     // () => import('../views/About.vue') for lazy loading
   },
