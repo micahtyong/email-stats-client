@@ -1,7 +1,7 @@
 <template>
-  <div id="nav">
+  <div class="d-flex" id="nav">
     <router-link class="router-link" to="/">Home</router-link> |
-    <router-link class="router-link" to="/docs">Docs</router-link>
+    <router-link class="router-link" to="/about">About</router-link>
   </div>
   <router-view />
 </template>
@@ -31,14 +31,12 @@ p {
 }
 
 .text-content {
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 /* Navbar CSS */
 #nav {
-  display: flex;
   justify-content: flex-end;
 }
 
@@ -57,7 +55,6 @@ p {
 
 /* Graph CSS */
 .graph-enlarged {
-  display: flex;
   flex-direction: column;
   justify-items: center;
 }

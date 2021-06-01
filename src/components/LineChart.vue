@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <apexcharts
-      :width="width"
-      :height="height"
-      type="line"
-      :options="chartOptions"
-      :series="series"
-    />
-  </div>
+  <apexcharts
+    :width="width"
+    :height="height"
+    type="line"
+    :options="chartOptions"
+    :series="series"
+  />
 </template>
 
 <script>
 import VueApexCharts from 'vue3-apexcharts'
 import { timeConverter } from '../fetchStats'
+import moment from 'moment'
+moment().format()
 
 export default {
   name: 'LineChart',
@@ -26,9 +26,9 @@ export default {
     width: String || Number,
     height: String || Number
   },
-  data: function () {
-    return {
-      chartOptions: {
+  computed: {
+    chartOptions: function () {
+      return {
         chart: {
           id: 'basic-line'
         },
@@ -36,7 +36,7 @@ export default {
           categories: this.times,
           labels: {
             formatter: (value) => {
-              return timeConverter(value)
+              return moment.unix(value).format('dd MMM YYYY hh:mm')
             },
             hideOverlappingLabels: true
           },
@@ -70,8 +70,10 @@ export default {
             }
           }
         }
-      },
-      series: [
+      }
+    },
+    series: function () {
+      return [
         {
           name: this.title,
           data: this.fromMeToGmail

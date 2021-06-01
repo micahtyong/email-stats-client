@@ -1,7 +1,7 @@
 <template>
-  <div class="graphs">
+  <div class="graphs d-flex">
     <div class="graph">
-      <router-link class="header" to="/graphs/frommetogmail">
+      <router-link class="header" to="/graphs/from-me-to-gmail">
         <h3>{{ fmtgLabel }}</h3>
       </router-link>
       <LineChart
@@ -13,7 +13,7 @@
       />
     </div>
     <div class="graph">
-      <router-link class="header" to="/graphs/frommetonongmail">
+      <router-link class="header" to="/graphs/from-me-to-non-gmail">
         <h3>{{ fmtngLabel }}</h3>
       </router-link>
       <LineChart
@@ -25,7 +25,7 @@
       />
     </div>
     <div class="graph">
-      <router-link class="header" to="/graphs/tomefromgmail">
+      <router-link class="header" to="/graphs/to-me-from-gmail">
         <h3>{{ tmfgLabel }}</h3> </router-link
       ><LineChart
         :title="tmfgLabel"
@@ -36,7 +36,7 @@
       />
     </div>
     <div class="graph">
-      <router-link class="header" to="/graphs/tomefromnongmail">
+      <router-link class="header" to="/graphs/to-me-from-non-gmail">
         <h3>{{ tmfngLabel }}</h3>
       </router-link>
       <LineChart
@@ -55,6 +55,8 @@ import { ref } from 'vue'
 import { useStore } from 'vuex'
 import LineChart from './LineChart.vue'
 import { rangeScan } from '../fetchStats.js'
+import moment from 'moment'
+moment().format()
 
 export default {
   name: 'EmailGraphs',
@@ -64,10 +66,8 @@ export default {
   async setup() {
     // Setup and fetch
     const store = useStore()
-    const start = Math.floor(
-      new Date(new Date().getTime() - 60 * 60 * 24 * 7 * 1000).getTime() / 1000
-    )
-    const end = Math.floor(Date.now() / 1000)
+    const start = moment().subtract(1, 'weeks').unix()
+    const end = moment().unix()
     const gmailStats = await rangeScan('micahtyong@gmail.com', start, end)
 
     // Parse and commit full stats
@@ -100,8 +100,6 @@ export default {
 
 <style scoped>
 .graphs {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -110,7 +108,6 @@ export default {
   display: inline-block;
   margin: 10px 0 0 2%;
   flex-grow: 1;
-  /* height: 100px; */
   width: calc(100% * (1 / 3) - 10px - 1px);
 }
 </style>
